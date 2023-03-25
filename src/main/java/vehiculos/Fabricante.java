@@ -6,13 +6,13 @@ import java.util.Map;
 
 public class Fabricante {
 	private String nombre;
-	private String pais;
+	private Pais pais;
 	static ArrayList<Fabricante> fabricantes_lista = new ArrayList<Fabricante>();
-	static Map<String, Integer> fabricantes = new HashMap<>();
+	static Map<Fabricante, Integer> fabricantes = new HashMap<>();
 	
-	public Fabricante(String nombre, String pais) {
-		this.setNombre(nombre);
-		this.setPais(pais);
+	public Fabricante(String nombre, Pais pais) {
+		this.nombre = nombre;
+		this.pais = pais;
 	}
 
 	public String getNombre() {
@@ -22,17 +22,17 @@ public class Fabricante {
 		this.nombre = nombre;
 	}
 
-	public String getPais() {
+	public Pais getPais() {
 		return pais;
 	}
-	public void setPais(String pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
 
-	public String fabricaMayorVentas() {
+	public Fabricante fabricaMayorVentas() {
 		int mayor = 0;
-		String fabricante = null;
-		for(Map.Entry<String, Integer> entry: fabricantes.entrySet()) {
+		Fabricante fabricante = null;
+		for(Map.Entry<Fabricante, Integer> entry: fabricantes.entrySet()) {
 			if (entry.getValue() >  mayor) {
 				mayor = entry.getValue();
 				fabricante = entry.getKey();

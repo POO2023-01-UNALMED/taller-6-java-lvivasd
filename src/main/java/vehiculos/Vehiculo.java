@@ -9,7 +9,7 @@ public class Vehiculo {
 	private int peso;
 	private String traccion;
 	private Fabricante fabricante;
-	public static int CantidadVehiculos = 0;
+	private static int CantidadVehiculos = 0;
 	
 	public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, int precio, int peso, String traccion, Fabricante fabricante) {
 		this.setPlaca(placa);
@@ -20,14 +20,14 @@ public class Vehiculo {
 		this.setPeso(peso);
 		this.setTraccion(traccion);
 		this.setFabricante(fabricante);
-		CantidadVehiculos += 1;
+		setCantidadVehiculos(getCantidadVehiculos() + 1);
 		
-		if(Fabricante.fabricantes.containsKey(fabricante.getNombre())) {
-			Fabricante.fabricantes.put(fabricante.getNombre(), Fabricante.fabricantes.get(fabricante.getNombre()) + 1);
+		if(Fabricante.fabricantes.containsKey(fabricante)) {
+			Fabricante.fabricantes.put(fabricante, Fabricante.fabricantes.get(fabricante) + 1);
 		}
 		else {
 			Fabricante.fabricantes_lista.add(fabricante);
-			Fabricante.fabricantes.put(fabricante.getNombre(), 1);
+			Fabricante.fabricantes.put(fabricante, 1);
 		}
 	}
 
@@ -87,6 +87,13 @@ public class Vehiculo {
 		this.fabricante = fabricante;
 	}
 	
+	public static int getCantidadVehiculos() {
+		return CantidadVehiculos;
+	}
+	public static void setCantidadVehiculos(int cantidadVehiculos) {
+		CantidadVehiculos = cantidadVehiculos;
+	}
+
 	public static String vehiculosPorTipo() {
 		return "Automoviles: " + Automovil.CantidadAutomoviles + "\nCamionetas: " + Camioneta.CantidadCamionetas + "\nCamiones: " + Camion.CantidadCamiones;
 	}
