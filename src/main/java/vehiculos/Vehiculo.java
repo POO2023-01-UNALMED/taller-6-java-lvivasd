@@ -88,6 +88,6 @@ public class Vehiculo {
 	}
 	
 	public static String vehiculosPorTipo() {
-		return "Automoviles: " + Automovil.CantidadAutomóviles + "\nCamionetas: " + Camioneta.CantidadCamionetas + "\nCamiones: " + Camion.CantidadCamiones;
+		return "Automoviles: " + Automovil.CantidadAutomoviles + "\nCamionetas: " + Camioneta.CantidadCamionetas + "\nCamiones: " + Camion.CantidadCamiones;
 	}
 }
