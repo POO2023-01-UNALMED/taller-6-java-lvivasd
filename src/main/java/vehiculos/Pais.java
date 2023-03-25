@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class País {
+public class Pais {
 	private String nombre;
 	private static Map<String, Integer> paises = new HashMap<>();
 	
-	public País(String nombre) {
+	public Pais(String nombre) {
 		this.setNombre(nombre);
 	}
 

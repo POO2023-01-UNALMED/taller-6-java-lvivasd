@@ -1,9 +1,9 @@
 package vehiculos;
 
-public class Automóvil extends Vehículo{
+public class Automovil extends Vehiculo{
 	private int puestos;
 	public static int CantidadAutomóviles = 0;
-	public Automóvil(int puestos, String placa, String nombre, int precio, int peso, Fabricante fabricante) {
+	public Automovil(int puestos, String placa, String nombre, int precio, int peso, Fabricante fabricante) {
 		super(placa, 4, 100, nombre, precio, peso, "FWD", fabricante);
 		this.setPuestos(puestos);
 		CantidadAutomóviles += 1;
