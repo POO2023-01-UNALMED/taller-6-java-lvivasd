@@ -19,7 +19,7 @@ public class Pais {
 		this.nombre = nombre;
 	}
 	
-	public Pais paisMasVendedor() {
+	public static Pais paisMasVendedor() {
 		Map<Fabricante, Integer> fabricantes = Fabricante.fabricantes;
 		ArrayList<Fabricante> fabricantes_lista = Fabricante.fabricantes_lista;
 		

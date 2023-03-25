@@ -29,7 +29,7 @@ public class Fabricante {
 		this.pais = pais;
 	}
 
-	public Fabricante fabricaMayorVentas() {
+	public static Fabricante fabricaMayorVentas() {
 		int mayor = 0;
 		Fabricante fabricante = null;
 		for(Map.Entry<Fabricante, Integer> entry: fabricantes.entrySet()) {
